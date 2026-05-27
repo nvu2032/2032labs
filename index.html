@@ -28,8 +28,8 @@ body{color:var(--ink);font-family:var(--f-mono);-webkit-font-smoothing:antialias
   background-size:32px 32px;
 }
 .grid-ink{
-  background-color:var(--ink);
-  background-image:linear-gradient(rgba(245,240,232,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,240,232,0.03) 1px,transparent 1px);
+  background-color:var(--cream);
+  background-image:linear-gradient(rgba(0,77,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,77,46,0.05) 1px,transparent 1px);
   background-size:32px 32px;
 }
 
@@ -89,8 +89,8 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   font-size:clamp(20px, 4.5vw, 52px);
   letter-spacing:0.04em;
   text-transform:uppercase;
-  color:var(--cream);
-  border:3px solid var(--cream);
+  color:var(--ink);
+  border:3px solid var(--ink);
   padding:4px 14px 1px;
   line-height:1;
   display:inline-block;
@@ -100,16 +100,21 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   user-select:none;
   touch-action:none;
 }
+.grid-forest .dyn-box {
+  color:var(--cream);
+  border:3px solid var(--cream);
+}
 .dyn-box:active { cursor:grabbing; }
-.dyn-green { background:var(--emerald); color:var(--ink); border-color:var(--cream); }
+.dyn-green { background:var(--emerald); color:var(--ink); border-color:var(--ink); }
+.grid-forest .dyn-green { border-color:var(--cream); }
 
 .method-steps{display:grid;grid-template-columns:1fr;}
-.method-step{padding:48px 20px;border-bottom:2px solid rgba(0,168,107,0.15);}
+.method-step{padding:48px 20px;border-bottom:2px solid rgba(0,77,46,0.15);}
 .method-step:last-child{border-bottom:none;}
-.step-box{border:3px solid var(--cream);padding:28px 20px;position:relative;height:100%;}
-.step-num{position:absolute;top:-14px;left:16px;font-family:var(--f-display);font-weight:700;font-size:11px;letter-spacing:0.15em;background:var(--ink);padding:0 8px;color:var(--emerald);}
-.step-title{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,4vw,28px);letter-spacing:0.04em;text-transform:uppercase;color:var(--cream);margin-bottom:12px;}
-.step-desc{font-size:12px;color:rgba(245,240,232,0.55);line-height:1.75;}
+.step-box{border:3px solid var(--ink);padding:28px 20px;position:relative;height:100%;}
+.step-num{position:absolute;top:-14px;left:16px;font-family:var(--f-display);font-weight:700;font-size:11px;letter-spacing:0.15em;background:var(--cream);padding:0 8px;color:var(--forest);}
+.step-title{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,4vw,28px);letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
+.step-desc{font-size:12px;color:rgba(26,18,8,0.75);line-height:1.75;}
 
 /* Refactored Card Layout into Two Clean Interconnected Boxes */
 .team-grid {
@@ -126,7 +131,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   cursor: pointer;
 }
 .team-photo-box {
-  border: 3px solid var(--cream);
+  border: 3px solid var(--ink);
   width: 100%;
   max-width: 280px;
   height: 320px;
@@ -141,24 +146,24 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   display: block;
 }
 .team-info-box {
-  border: 3px solid var(--cream);
+  border: 3px solid var(--ink);
   padding: 32px 24px;
   background: transparent;
   transition: background-color 0.15s ease;
 }
 .team-card-link:hover .team-photo-box { border-color: var(--emerald); }
-.team-card-link:hover .team-info-box { background-color: rgba(245,240,232,0.03); border-color: var(--emerald); }
+.team-card-link:hover .team-info-box { background-color: rgba(0,77,46,0.04); border-color: var(--emerald); }
 
-.team-role { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--emerald); margin-bottom: 6px; }
-.team-name { font-family: var(--f-display); font-size: 26px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cream); margin-bottom: 3px; }
-.team-handle { font-size: 11px; color: var(--emerald); margin-bottom: 14px; }
-.team-bio { font-size: 12px; color: rgba(245,240,232,0.55); line-height: 1.75; }
+.team-role { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--forest); margin-bottom: 6px; }
+.team-name { font-family: var(--f-display); font-size: 26px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+.team-handle { font-size: 11px; color: var(--forest); margin-bottom: 14px; font-weight: 600; }
+.team-bio { font-size: 12px; color: rgba(26,18,8,0.75); line-height: 1.75; }
 
-.team-open{padding:32px 20px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;border:3px dashed rgba(0,168,107,0.3);margin:24px 20px 48px;transition:border-color 0.15s;}
-.team-open:hover{border-color:var(--emerald);}
-.team-open-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-bottom:6px;}
-.team-open-title{font-family:var(--f-display);font-size:22px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--cream);}
-.team-open-arrow{font-size:28px;color:var(--emerald);font-weight:700;flex-shrink:0;}
+.team-open{padding:32px 20px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;border:3px dashed rgba(0,77,46,0.3);margin:24px 20px 48px;transition:border-color 0.15s;}
+.team-open:hover{border-color:var(--forest);}
+.team-open-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(26,18,8,0.4);margin-bottom:6px;}
+.team-open-title{font-family:var(--f-display);font-size:22px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);}
+.team-open-arrow{font-size:28px;color:var(--forest);font-weight:700;flex-shrink:0;}
 
 .cta-container { padding: 80px 20px 60px; }
 .cta-sub{font-size:13px;color:rgba(245,240,232,0.85);line-height:1.85;max-width:480px;margin-bottom:32px;}
@@ -314,9 +319,9 @@ footer{background:#000000; border-top:var(--bf);}
   </div>
   
   <div class="team-grid">
-    <a href="https://2032now.com/nicolas" target="_blank" class="team-card-link">
+    <a href="https://www.linkedin.com/in/nicolas-vargas-ugalde/" target="_blank" class="team-card-link">
       <div class="team-photo-box">
-        <img src="data:image/jpeg;base64,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" alt="Nicolás Vargas">
+        <img src="2032now-nicolas.jpg" alt="Nicolás Vargas">
       </div>
       <div class="team-info-box">
         <div class="team-role">Founder</div>
@@ -340,7 +345,7 @@ footer{background:#000000; border-top:var(--bf);}
   <div class="cta-container">
     <p style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;" data-i18n="cta_eyebrow">Are you the next builder?</p>
     
-    <div class="dyn-title-container" id="cta-title-container" style="height:clamp(140px, 16vw, 240px);">
+    <div class="dyn-title-container" id="cta-title-container" style="height:clamp(140px, 16vw, 240px); margin-bottom:32px;">
       <div class="dyn-box" style="top: 0px; left: 0px;">YOU'RE READY.</div>
       <div class="dyn-box dyn-green" style="top: clamp(55px, 7vw, 95px); left: clamp(20px, 5vw, 80px);">BUILD NOW.</div>
     </div>
