@@ -376,3 +376,138 @@ footer{background:#000000; border-top:var(--bf);}
     <p style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;" data-i18n="cta_eyebrow">Are you the next builder?</p>
     
     <div class="dyn-title-container" id="cta-title-container" style="height:clamp(140px, 16vw, 240px); margin-bottom:32px;">
+      <div class="dyn-box" style="top: 0px; left: 0px;">YOU'RE READY.</div>
+      <div class="dyn-box dyn-green" style="top: clamp(55px, 7vw, 95px); left: clamp(20px, 5vw, 80px);">BUILD NOW.</div>
+    </div>
+
+    <p class="cta-sub" data-i18n="cta_sub">Bring your ideas, your skills, your energy. Let's build a future of our own.</p>
+    
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="form-container">
+        <input type="email" name="email" class="input-field" placeholder="Enter your email address" required>
+        <button type="submit" class="submit-btn" data-i18n="cta_btn">Join 2032NOW</button>
+      </form>
+    </div>
+
+    <div class="social-grid">
+      <a href="https://tiktok.com/@nicoinsf" target="_blank" class="social-item">TikTok @nicoinsf</a>
+      <a href="https://instagram.com/2032now" target="_blank" class="social-item">Instagram</a>
+      <a href="https://www.linkedin.com/in/nicolas-vargas-ugalde/" target="_blank" class="social-item">LinkedIn</a>
+      <a href="mailto:nico@2032now.com" class="social-item">nico@2032now.com</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#000000; border-top:var(--bf);">
+  <div class="footer-row">
+    <div class="footer-cell">2032NOW LLC</div>
+    <div class="footer-cell">2026</div>
+    <div class="footer-cell">Lima · San Francisco</div>
+  </div>
+  <div class="footer-logo">2032<span>NOW</span></div>
+</footer>
+
+<script>
+const i18n = {
+  en: {
+    nav_cta:"Join us",
+    hero_sub:"2032NOW IS A DIGITAL COMMUNITY FOR LATIN AMERICANS BUILDING THE FUTURE WE WERE PROMISED — ONE PRODUCT AT A TIME.",
+    hero_btn_ghost:"How we work →",
+    method_eyebrow:"How we work",
+    m1_title:"BRING YOUR POV",
+    m1_desc:"Share your observations about Latin American needs. Something you know is broken. Bring a deck, 2032NOW community will break it down and help you shape an experiment.",
+    m2_title:"WE EXPERIMENT TOGETHER",
+    m2_desc:"Fast field tests. No investment, no equity yet. We validate the problem is real, the user exists, and the solution isn't already obvious. 2032NOW community documents our fails and learnings.",
+    m3_title:"LAUNCH A PRODUCT",
+    m3_desc:"Define roles and what we're building toward. The experiment becomes a product. The product becomes a business. 2032NOW provides the vehicle for LatAm and the US.",
+    team_eyebrow:"The team",
+    team_open_label:"You?", team_open_title:"Join the community.",
+    cta_eyebrow:"Are you the next builder?",
+    cta_sub:"Bring your ideas, your skills, your energy. Let's build a future of our own.",
+    cta_btn:"Join 2032NOW"
+  },
+  es: {
+    nav_cta:"Únete",
+    hero_sub:"2032NOW ES UNA COMUNIDAD DIGITAL PARA LATINOAMERICANOS CONSTRUYENDO EL FUTURO QUE NOS PROMETIERON — UN PRODUCTO A LA VEZ.",
+    hero_btn_ghost:"Cómo trabajamos →",
+    method_eyebrow:"Cómo trabajamos",
+    m1_title:"TRAE TU POV",
+    m1_desc:"Comparte tus observaciones sobre las necesidades latinoamericanas. Algo que sepas que está roto. Trae un deck, la comunidad de 2032NOW lo analizará y te ayudará a diseñar un experimento.",
+    m2_title:"Experimentamos juntos",
+    m2_desc:"Pruebas de campo rápidas. Sin inversión, sin acciones todavía. Validamos que el problema sea real, que el usuario exista y que la solución no sea obvia. La comunidad de 2032NOW documenta nuestros fallos y aprendizajes.",
+    m3_title:"LANZA UN PRODUCTO",
+    m3_desc:"Define roles y hacia qué estamos construyendo. El experimento se convierte en un producto. El producto se convierte en un negocio. 2032NOW proporciona el vehículo para LatAm y los EE.UU.",
+    team_eyebrow:"El equipo",
+    team_open_label:"¿Tú?", team_open_title:"Únete a la comunidad.",
+    cta_eyebrow:"¿Eres el próximo builder?",
+    cta_sub:"Trae tus ideas, tus habilidades, tu energía. Construyamos un futuro propio.",
+    cta_btn:"Únete a 2032NOW"
+  }
+};
+
+let lang = localStorage.getItem('2032_lang') || 'en';
+function applyLang() {
+  const d = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (d[k] !== undefined) el.innerHTML = d[k];
+  });
+  document.documentElement.lang = lang;
+  localStorage.setItem('2032_lang', lang);
+}
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  lang = lang === 'en' ? 'es' : 'en';
+  applyLang();
+});
+applyLang();
+
+// Drag configurations for floating boxed titles
+(function() {
+  const boxes = document.querySelectorAll('.hbox, .dyn-box');
+  boxes.forEach(box => {
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+
+    function getPos(e) {
+      return e.touches ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+                       : { x: e.clientX, y: e.clientY };
+    }
+
+    function onStart(e) {
+      isDragging = true;
+      const pos = getPos(e);
+      startX = pos.x;
+      startY = pos.y;
+      startLeft = parseInt(box.style.left) || box.offsetLeft;
+      startTop  = parseInt(box.style.top)  || box.offsetTop;
+      box.style.zIndex = 99;
+      box.style.transition = 'none';
+      if(e.type === 'touchstart') e.preventDefault();
+    }
+
+    function onMove(e) {
+      if (!isDragging) return;
+      const pos = getPos(e);
+      const dx = pos.x - startX;
+      const dy = pos.y - startY;
+      box.style.left = (startLeft + dx) + 'px';
+      box.style.top  = (startTop  + dy) + 'px';
+      e.preventDefault();
+    }
+
+    function onEnd() {
+      isDragging = false;
+      box.style.zIndex = '';
+    }
+
+    box.addEventListener('mousedown',  onStart);
+    box.addEventListener('touchstart', onStart, { passive: false });
+    document.addEventListener('mousemove',  onMove);
+    document.addEventListener('touchmove',  onMove, { passive: false });
+    document.addEventListener('mouseup',    onEnd);
+    document.addEventListener('touchend',   onEnd);
+  });
+})();
+</script>
+</body>
+</html>
