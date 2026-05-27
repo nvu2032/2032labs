@@ -108,7 +108,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .dyn-green { background:var(--emerald); color:var(--ink); border-color:var(--ink); }
 .grid-forest .dyn-green { border-color:var(--cream); }
 
-.method-steps{display:grid;grid-template-columns:1fr; padding-bottom:80px;}
+.method-steps{display:grid;grid-template-columns:1fr; padding-bottom:120px;}
 .method-step{padding:32px 20px;border-bottom:2px solid rgba(0,77,46,0.15);}
 .method-step:last-child{border-bottom:none;}
 .step-box{border:3px solid var(--ink);padding:28px 20px;position:relative;height:100%;}
@@ -121,7 +121,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
-  padding: 16px 20px 96px; 
+  padding: 16px 20px 120px; 
 }
 .team-card-link {
   display: flex;
@@ -129,12 +129,13 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   gap: 24px;
   text-decoration: none;
   cursor: pointer;
+  max-width: 320px;
+  width: 100%;
 }
 .team-photo-box {
   border: 3px solid var(--ink);
   width: 100%;
-  max-width: 280px;
-  height: 320px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   transition: border-color 0.15s ease;
   position: relative;
@@ -145,6 +146,17 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   object-fit: cover;
   object-position: top;
   display: block;
+}
+
+/* Green Color Overlay Base Layer Styling */
+.team-photo-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--emerald);
+  opacity: 0.15;
+  mix-blend-mode: color;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
 }
 
 /* Fallback Blueprint Box Text */
@@ -161,6 +173,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   text-transform: uppercase;
   letter-spacing: 0.1em;
   background-color: rgba(0, 168, 107, 0.05);
+  z-index: 1;
 }
 
 .team-info-box {
@@ -169,7 +182,10 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   background: transparent;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
+
+/* Dynamic Hover Tint Transformations */
 .team-card-link:hover .team-photo-box { border-color: var(--emerald); }
+.team-card-link:hover .team-photo-box::after { opacity: 0.35; }
 .team-card-link:hover .team-info-box { background-color: rgba(0,77,46,0.04); border-color: var(--emerald); }
 
 .team-role { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--forest); margin-bottom: 6px; }
@@ -177,7 +193,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .team-handle { font-size: 11px; color: var(--forest); margin-bottom: 14px; font-weight: 600; }
 .team-bio { font-size: 12px; color: rgba(26,18,8,0.75); line-height: 1.75; }
 
-.team-open{padding:32px 20px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;border:3px dashed rgba(0,77,46,0.3);margin:0px 20px 80px;transition:border-color 0.15s;}
+.team-open{padding:32px 20px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;border:3px dashed rgba(0,77,46,0.3);margin:0px 20px 120px;transition:border-color 0.15s;}
 .team-open:hover{border-color:var(--forest);}
 .team-open-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(26,18,8,0.4);margin-bottom:6px;}
 .team-open-title{font-family:var(--f-display);font-size:22px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);}
@@ -243,8 +259,8 @@ footer{background:#000000; border-top:var(--bf);}
   .method-step{padding:0px 20px; border-bottom:none;border-right:2px solid rgba(0,168,107,0.15);}
   .method-step:last-child{border-right:none;}
   .team-grid { grid-template-columns: 1fr 1fr; padding: 16px 48px 80px; gap: 32px; }
-  .team-card-link { flex-direction: column; align-items: stretch; }
-  .team-photo-box { max-width: 100%; width: 100%; }
+  .team-card-link { flex-direction: column; align-items: stretch; max-width: 100%; }
+  .team-photo-box { width: 100%; }
   .team-open { margin: 0px 48px 120px; }
   .cta-container { padding: 100px 48px 60px; }
   .form-container { flex-direction: row; }
@@ -311,7 +327,7 @@ footer{background:#000000; border-top:var(--bf);}
     <div class="method-step">
       <div class="step-box">
         <span class="step-num">02</span>
-        <div class="step-title" data-i18n="m2_title">EXPERIMENT TOGETHER</div>
+        <div class="step-title" data-i18n="m2_title">WE EXPERIMENT TOGETHER</div>
         <p class="step-desc" data-i18n="m2_desc">Fast field tests. No investment, no equity yet. We validate the problem is real, the user exists, and the solution isn't already obvious. 2032NOW community documents our fails and learnings.</p>
       </div>
     </div>
@@ -416,7 +432,7 @@ const i18n = {
     method_eyebrow:"How we work",
     m1_title:"BRING YOUR POV",
     m1_desc:"Share your observations about Latin American needs. Something you know is broken. Bring a deck, a prototype or a story. 2032NOW community will break it down and help you turn it into an experiment.",
-    m2_title:"EXPERIMENT TOGETHER",
+    m2_title:"WE EXPERIMENT TOGETHER",
     m2_desc:"Fast field tests. No investment, no equity yet. We validate the problem is real, the user exists, and the solution isn't already obvious. 2032NOW community documents our fails and learnings.",
     m3_title:"LAUNCH A PRODUCT",
     m3_desc:"Define roles and what we're building toward. The experiment becomes a product. The product becomes a business. 2032NOW provides the vehicle for LatAm and the US.",
