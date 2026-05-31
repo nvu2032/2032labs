@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2032NOW — Build with us</title>
+<title>2032NOW — Cross-Border SaaS Infrastructure</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -67,6 +67,30 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .btn.ghost{color:var(--cream);margin-left:-3px;}
 .btn.ghost:hover{background:var(--cream);color:var(--forest);}
 
+/* Product Console Mockup Styling */
+.console-mockup {
+  border: 3px solid var(--cream);
+  background: rgba(0, 0, 0, 0.4);
+  max-width: 680px;
+  width: 100%;
+  margin-top: 32px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+}
+.console-header {
+  background: rgba(245, 240, 232, 0.1);
+  padding: 8px 16px;
+  border-bottom: 2px solid var(--cream);
+  display: flex;
+  justify-content: space-between;
+  color: var(--cream);
+}
+.console-body {
+  padding: 20px;
+  color: var(--emerald);
+  line-height: 1.6;
+}
+
 .ticker{background:var(--emerald);border-bottom:3px solid var(--ink);overflow:hidden;white-space:nowrap;height:40px;display:flex;align-items:center;}
 .ticker-track{display:inline-block;animation:tick 22s linear infinite;}
 .ticker-track span{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin:0 24px;}
@@ -77,7 +101,6 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .section-header{padding:64px 20px 16px; border-bottom:none;}
 .section-tag{font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--emerald);margin-bottom:20px;}
 
-/* Custom Boxed Titles For Lower Sections */
 .dyn-title-container {
   position:relative;
   height:clamp(110px, 14vw, 210px);
@@ -116,7 +139,6 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .step-title{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,4vw,28px);letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
 .step-desc{font-size:12px;color:rgba(26,18,8,0.75);line-height:1.75;}
 
-/* Rebuilt Team Multi-Card CSS Grid Structure */
 .team-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -147,8 +169,6 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   object-position: top;
   display: block;
 }
-
-/* Green Color Overlay Base Layer Styling */
 .team-photo-box::after {
   content: '';
   position: absolute;
@@ -158,8 +178,6 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   mix-blend-mode: color;
   transition: opacity 0.15s ease, background-color 0.15s ease;
 }
-
-/* Fallback Blueprint Box Text */
 .team-placeholder-text {
   position: absolute;
   inset: 0;
@@ -175,15 +193,12 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
   background-color: rgba(0, 168, 107, 0.05);
   z-index: 1;
 }
-
 .team-info-box {
   border: 3px solid var(--ink);
   padding: 32px 24px;
   background: transparent;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
-
-/* Dynamic Hover Tint Transformations */
 .team-card-link:hover .team-photo-box { border-color: var(--emerald); }
 .team-card-link:hover .team-photo-box::after { opacity: 0.35; }
 .team-card-link:hover .team-info-box { background-color: rgba(0,77,46,0.04); border-color: var(--emerald); }
@@ -202,7 +217,6 @@ nav{position:sticky;top:0;z-index:100;border-bottom:var(--bf);padding:0 20px;dis
 .cta-container { padding: 80px 20px 60px; }
 .cta-sub{font-size:13px;color:rgba(245,240,232,0.85);line-height:1.85;max-width:480px;margin-bottom:32px;}
 
-/* Embedded Input Email Field Container Layout */
 .form-wrapper {
   max-width: 520px;
   margin-bottom: 48px;
@@ -279,63 +293,77 @@ footer{background:#000000; border-top:var(--bf);}
   <a href="#" class="nav-logo">2032<span>NOW</span></a>
   <div class="nav-right">
     <button class="nav-item" id="lang-toggle">EN / ES</button>
-    <a href="#cta" class="nav-item cta">Join us</a>
+    <a href="#cta" class="nav-item cta" data-i18n="nav_cta">Request Sandbox Access</a>
   </div>
 </nav>
 
 <section class="hero grid-forest">
-  <div class="hero-label">PRODUCT COMMUNITY</div>
+  <div class="hero-label">CROSS-BORDER SAAS INFRASTRUCTURE</div>
   <div class="hero-title-boxes" id="hero-boxes">
-    <div class="hbox hbox-1" id="box-we">WE</div>
-    <div class="hbox hbox-2 hbox-green" id="box-build">BUILD</div>
-    <div class="hbox hbox-3" id="box-together">TOGETHER</div>
-    <div class="hbox hbox-4" id="box-now">NOW</div>
+    <div class="hbox hbox-1" id="box-we">DISTRIBUTED</div>
+    <div class="hbox hbox-2 hbox-green" id="box-build">PRODUCTIVITY</div>
+    <div class="hbox hbox-3" id="box-together">ENGINE FOR</div>
+    <div class="hbox hbox-4" id="box-now">LATAM</div>
   </div>
   <div class="hero-bottom">
-    <div class="hero-sub-box" data-i18n="hero_sub">2032NOW IS A DIGITAL COMMUNITY FOR LATIN AMERICANS BUILDING THE FUTURE WE WERE PROMISED — ONE PRODUCT AT A TIME.</div>
+    <div class="hero-sub-box" data-i18n="hero_sub">2032NOW PROVIDES HIGH-PERFORMANCE CLOUD ENGINE TOOLS, DECENTRALIZED DATA SYNCHRONIZATION, AND LATAM-US COMPLIANCE FOR MODERN DISTRIBUTED WORKSPACES.</div>
     <div class="hero-actions">
-      <a href="#method" class="btn ghost" data-i18n="hero_btn_ghost">How we work →</a>
+      <a href="#method" class="btn ghost" data-i18n="hero_btn_ghost">System architecture →</a>
+    </div>
+    
+    <!-- Interactive Software Dashboard Preview Container -->
+    <div class="console-mockup">
+      <div class="console-header">
+        <span>2032_CONSOLE_v1.04 // STABLE_BUILD</span>
+        <span>SYS_OK</span>
+      </div>
+      <div class="console-body">
+        > initializing cross-border synchronization tunnels...<br>
+        > establishing latency optimizations: SF_NODE_01 &lt;---&gt; LIMA_NODE_02<br>
+        > workspace telemetry verification: active [128-bit encryption secured]<br>
+        > distributed cloud modules loaded. ready for container deployment.
+      </div>
     </div>
   </div>
 </section>
 
 <div class="ticker">
   <div class="ticker-track">
-    <span>Field Research</span><span class="sep">///</span><span>Digital Communities</span><span class="sep">///</span><span>AI Products</span><span class="sep">///</span><span>Experiment First</span><span class="sep">///</span><span>Bilingual</span><span class="sep">///</span><span>San Francisco</span><span class="sep">///</span><span>Community Builds</span><span class="sep">///</span><span>Lima</span><span class="sep">///</span>
-    <span>Field Research</span><span class="sep">///</span><span>Digital Communities</span><span class="sep">///</span><span>AI Products</span><span class="sep">///</span><span>Experiment First</span><span class="sep">///</span><span>Bilingual</span><span class="sep">///</span><span>San Francisco</span><span class="sep">///</span><span>Community Builds</span><span class="sep">///</span><span>Lima</span><span class="sep">///</span>
+    <span>Distributed Infrastructure</span><span class="sep">///</span><span>SaaS Workspaces</span><span class="sep">///</span><span>Automated Compliance</span><span class="sep">///</span><span>Cloud Engines</span><span class="sep">///</span><span>Data Sync Routing</span><span class="sep">///</span><span>Silicon Valley Deployed</span><span class="sep">///</span><span>High Architecture Footprint</span><span class="sep">///</span>
+    <span>Distributed Infrastructure</span><span class="sep">///</span><span>SaaS Workspaces</span><span class="sep">///</span><span>Automated Compliance</span><span class="sep">///</span><span>Cloud Engines</span><span class="sep">///</span><span>Data Sync Routing</span><span class="sep">///</span><span>Silicon Valley Deployed</span><span class="sep">///</span><span>High Architecture Footprint</span><span class="sep">///</span>
   </div>
 </div>
 
 <section class="section grid-ink" id="method">
   <div class="section-header">
-    <p class="section-tag" data-i18n="method_eyebrow">How we work</p>
+    <p class="section-tag" data-i18n="method_eyebrow">SYSTEM ARCHITECTURE</p>
     <div class="dyn-title-container" id="method-title-container">
-      <div class="dyn-box" style="top: 0px; left: 0px;">TRUST</div>
-      <div class="dyn-box dyn-green" style="top: 15px; left: 110px;">YOUR</div>
-      <div class="dyn-box" style="top: 5px; left: 215px;">GUT</div>
-      <div class="dyn-box" style="top: 25px; left: 295px;">FEELING</div>
+      <div class="dyn-box" style="top: 0px; left: 0px;">BUILT FOR</div>
+      <div class="dyn-box dyn-green" style="top: 15px; left: 160px;">COMPLEX</div>
+      <div class="dyn-box" style="top: 5px; left: 325px;">CLOUD</div>
+      <div class="dyn-box" style="top: 25px; left: 435px;">PIPELINES</div>
     </div>
   </div>
   <div class="method-steps">
     <div class="method-step">
       <div class="step-box">
         <span class="step-num">01</span>
-        <div class="step-title" data-i18n="m1_title">BRING YOUR POV</div>
-        <p class="step-desc" data-i18n="m1_desc">Share your observations about Latin American needs. Something you know is broken. Bring a deck, a prototype or a story. 2032NOW community will break it down and help you turn it into an experiment.</p>
+        <div class="step-title" data-i18n="m1_title">DISTRIBUTED STORAGE</div>
+        <p class="step-desc" data-i18n="m1_desc">Real-time distributed data storage solutions architected for modern teams. We construct high-availability cloud file pipelines that cross traditional borders with minimal replication lag.</p>
       </div>
     </div>
     <div class="method-step">
       <div class="step-box">
         <span class="step-num">02</span>
-        <div class="step-title" data-i18n="m2_title">WE EXPERIMENT TOGETHER</div>
-        <p class="step-desc" data-i18n="m2_desc">Fast field tests. No investment, no equity yet. We validate the problem is real, the user exists, and the solution isn't already obvious. 2032NOW community documents our fails and learnings.</p>
+        <div class="step-title" data-i18n="m2_title">COMPLIANCE ENGINE</div>
+        <p class="step-desc" data-i18n="m2_desc">Automated legal and corporate framework parsing between Latin American entities and United States corporate systems. Reducing onboarding drag from weeks to milliseconds via dynamic structural mapping.</p>
       </div>
     </div>
     <div class="method-step">
       <div class="step-box">
         <span class="step-num">03</span>
-        <div class="step-title" data-i18n="m3_title">LAUNCH A PRODUCT</div>
-        <p class="step-desc" data-i18n="m3_desc">Define roles and what we're building toward. The experiment becomes a product. The product becomes a business. 2032NOW provides the vehicle for LatAm and the US.</p>
+        <div class="step-title" data-i18n="m3_title">NEXT-GEN CORE CONSOLE</div>
+        <p class="step-desc" data-i18n="m3_desc">Deploying robust visual workspace management tools built on React/Next.js architectures, backed by complex multi-region processing instances designed to scale computational workflows securely.</p>
       </div>
     </div>
   </div>
@@ -343,12 +371,12 @@ footer{background:#000000; border-top:var(--bf);}
 
 <section class="section grid-ink" id="team">
   <div class="section-header">
-    <p class="section-tag" data-i18n="team_eyebrow">The team</p>
+    <p class="section-tag" data-i18n="team_eyebrow">Core Engineering</p>
     <div class="dyn-title-container" id="team-title-container">
-      <div class="dyn-box" style="top: 5px; left: 0px;">BUILDING</div>
-      <div class="dyn-box" style="top: 20px; left: 165px;">A</div>
-      <div class="dyn-box dyn-green" style="top: 0px; left: 205px;">PRODUCT</div>
-      <div class="dyn-box" style="top: 15px; left: 360px;">COMMUNITY</div>
+      <div class="dyn-box" style="top: 5px; left: 0px;">DEVELOPING</div>
+      <div class="dyn-box" style="top: 20px; left: 195px;">HIGH</div>
+      <div class="dyn-box dyn-green" style="top: 0px; left: 265px;">FOOTPRINT</div>
+      <div class="dyn-box" style="top: 15px; left: 450px;">PLATFORMS</div>
     </div>
   </div>
   
@@ -358,30 +386,30 @@ footer{background:#000000; border-top:var(--bf);}
         <img src="2032now-nicolas.jpg" alt="Nicolás Vargas">
       </div>
       <div class="team-info-box">
-        <div class="team-role">Founder</div>
+        <div class="team-role">Lead Architect</div>
         <div class="team-name">Nicolás Vargas</div>
         <div class="team-handle">@nicoinsf</div>
-        <div class="team-bio">Peruvian Design Researcher. 10 years decoding Latin America. Now in San Francisco, CA.</div>
+        <div class="team-bio">Peruvian Design & System Researcher. 10 years decoding user experience and infrastructure across LatAm. Deployed in San Francisco, CA.</div>
       </div>
     </a>
 
     <a href="#" class="team-card-link">
       <div class="team-photo-box">
-        <div class="team-placeholder-text">your photo</div>
+        <div class="team-placeholder-text">System node empty</div>
       </div>
       <div class="team-info-box">
-        <div class="team-role">Builder</div>
-        <div class="team-name">your name</div>
-        <div class="team-handle">@yourhandle</div>
-        <div class="team-bio">your story</div>
+        <div class="team-role">Infrastructure Partner</div>
+        <div class="team-name">Enterprise Node</div>
+        <div class="team-handle">@cluster_allocation</div>
+        <div class="team-bio">Allocated platform slot for distributed cloud engineering, secure API operations, and database virtualization.</div>
       </div>
     </a>
   </div>
 
   <a href="#cta" class="team-open grid-forest">
     <div>
-      <div class="team-open-label" data-i18n="team_open_label">You?</div>
-      <div class="team-open-title" data-i18n="team_open_title">JOIN THE COMMUNITY.</div>
+      <div class="team-open-label" data-i18n="team_open_label">Scale With Us</div>
+      <div class="team-open-title" data-i18n="team_open_title">REQUEST SYSTEM DEVELOPER ACCOUNT.</div>
     </div>
     <div class="team-open-arrow">→</div>
   </a>
@@ -389,26 +417,26 @@ footer{background:#000000; border-top:var(--bf);}
 
 <section class="section var-forest grid-forest" id="cta">
   <div class="cta-container">
-    <p style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;" data-i18n="cta_eyebrow">Are you the next builder?</p>
+    <p style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;" data-i18n="cta_eyebrow">READY FOR CLOUD DEPLOYMENT?</p>
     
     <div class="dyn-title-container" id="cta-title-container" style="height:clamp(140px, 16vw, 240px); margin-bottom:32px;">
-      <div class="dyn-box" style="top: 0px; left: 0px;">YOU'RE READY.</div>
-      <div class="dyn-box dyn-green" style="top: clamp(55px, 7vw, 95px); left: clamp(20px, 5vw, 80px);">BUILD NOW.</div>
+      <div class="dyn-box" style="top: 0px; left: 0px;">INITIALIZE INSTANCE.</div>
+      <div class="dyn-box dyn-green" style="top: clamp(55px, 7vw, 95px); left: clamp(20px, 5vw, 80px);">PROCEED TO ACCESS.</div>
     </div>
 
-    <p class="cta-sub" data-i18n="cta_sub">Bring your ideas, your skills, your energy. Let's build a future of our own.</p>
+    <p class="cta-sub" data-i18n="cta_sub">Submit your organization registry email to initiate API playground verification and request sandbox infrastructure environments.</p>
     
     <div class="form-wrapper">
       <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="form-container">
-        <input type="email" name="email" class="input-field" placeholder="Enter your email address" required>
-        <button type="submit" class="submit-btn" data-i18n="cta_btn">Join 2032NOW</button>
+        <input type="email" name="email" class="input-field" placeholder="Enter corporate email address" required>
+        <button type="submit" class="submit-btn" data-i18n="cta_btn">Initialize Console</button>
       </form>
     </div>
 
     <div class="social-grid">
-      <a href="https://tiktok.com/@nicoinsf" target="_blank" class="social-item">TikTok @nicoinsf</a>
-      <a href="https://instagram.com/2032now" target="_blank" class="social-item">Instagram</a>
-      <a href="https://www.linkedin.com/in/nicolas-vargas-ugalde/" target="_blank" class="social-item">LinkedIn</a>
+      <a href="https://tiktok.com/@nicoinsf" target="_blank" class="social-item">DevOps Telemetry</a>
+      <a href="https://instagram.com/2032now" target="_blank" class="social-item">System Log</a>
+      <a href="https://www.linkedin.com/in/nicolas-vargas-ugalde/" target="_blank" class="social-item">Network Node</a>
       <a href="mailto:nico@2032now.com" class="social-item">nico@2032now.com</a>
     </div>
   </div>
@@ -416,9 +444,9 @@ footer{background:#000000; border-top:var(--bf);}
 
 <footer style="background:#000000; border-top:var(--bf);">
   <div class="footer-row">
-    <div class="footer-cell">2032NOW LLC</div>
-    <div class="footer-cell">2026</div>
-    <div class="footer-cell">Lima · San Francisco</div>
+    <div class="footer-cell">2032NOW INC // ARCHITECTURE GROUP</div>
+    <div class="footer-cell">EST. 2026</div>
+    <div class="footer-cell">Node Cluster: Lima · San Francisco</div>
   </div>
   <div class="footer-logo">2032<span>NOW</span></div>
 </footer>
@@ -426,38 +454,38 @@ footer{background:#000000; border-top:var(--bf);}
 <script>
 const i18n = {
   en: {
-    nav_cta:"Join us",
-    hero_sub:"2032NOW IS A DIGITAL COMMUNITY FOR LATIN AMERICANS BUILDING THE FUTURE WE WERE PROMISED — ONE PRODUCT AT A TIME.",
-    hero_btn_ghost:"How we work →",
-    method_eyebrow:"How we work",
-    m1_title:"BRING YOUR POV",
-    m1_desc:"Share your observations about Latin American needs. Something you know is broken. Bring a deck, a prototype or a story. 2032NOW community will break it down and help you turn it into an experiment.",
-    m2_title:"WE EXPERIMENT TOGETHER",
-    m2_desc:"Fast field tests. No investment, no equity yet. We validate the problem is real, the user exists, and the solution isn't already obvious. 2032NOW community documents our fails and learnings.",
-    m3_title:"LAUNCH A PRODUCT",
-    m3_desc:"Define roles and what we're building toward. The experiment becomes a product. The product becomes a business. 2032NOW provides the vehicle for LatAm and the US.",
-    team_eyebrow:"The team",
-    team_open_label:"You?", team_open_title:"Join the community.",
-    cta_eyebrow:"Are you the next builder?",
-    cta_sub:"Bring your ideas, your skills, your energy. Let's build a future of our own.",
-    cta_btn:"Join 2032NOW"
+    nav_cta:"Request Sandbox Access",
+    hero_sub:"2032NOW PROVIDES HIGH-PERFORMANCE CLOUD ENGINE TOOLS, DECENTRALIZED DATA SYNCHRONIZATION, AND LATAM-US COMPLIANCE FOR MODERN DISTRIBUTED WORKSPACES.",
+    hero_btn_ghost:"System architecture →",
+    method_eyebrow:"SYSTEM ARCHITECTURE",
+    m1_title:"DISTRIBUTED STORAGE",
+    m1_desc:"Real-time distributed data storage solutions architected for modern teams. We construct high-availability cloud file pipelines that cross traditional borders with minimal replication lag.",
+    m2_title:"COMPLIANCE ENGINE",
+    m2_desc:"Automated legal and corporate framework parsing between Latin American entities and United States corporate systems. Reducing onboarding drag from weeks to milliseconds via dynamic structural mapping.",
+    m3_title:"NEXT-GEN CORE CONSOLE",
+    m3_desc:"Deploying robust visual workspace management tools built on React/Next.js architectures, backed by complex multi-region processing instances designed to scale computational workflows securely.",
+    team_eyebrow:"Core Engineering",
+    team_open_label:"Scale With Us", team_open_title:"REQUEST SYSTEM DEVELOPER ACCOUNT.",
+    cta_eyebrow:"READY FOR CLOUD DEPLOYMENT?",
+    cta_sub:"Submit your organization registry email to initiate API playground verification and request sandbox infrastructure environments.",
+    cta_btn:"Initialize Console"
   },
   es: {
-    nav_cta:"Únete",
-    hero_sub:"2032NOW ES UNA COMUNIDAD DIGITAL PARA CONSTRUIR EL FUTURO QUE NOS PROMETIERON — UN PRODUCTO A LA VEZ.",
-    hero_btn_ghost:"Cómo trabajamos →",
-    method_eyebrow:"Cómo trabajamos",
-    m1_title:"TRAE TU POV",
-    m1_desc:"Comparte tus observaciones sobre las necesidades latinoamericanas. Algo que sepas que está roto. Trae un deck, un prototipo o una historia. La comunidad de 2032NOW lo analizará y te ayudará a convertirla en un experimento.",
-    m2_title:"Experimentamos juntos",
-    m2_desc:"Pruebas de campo rápidas. Sin inversión, sin acciones todavía. Validamos que el problema sea real, que el usuario exista y que la solución no sea obvia. La comunidad de 2032NOW documenta nuestros fallos y aprendizajes.",
-    m3_title:"LANZA UN PRODUCTO",
-    m3_desc:"Define roles y hacia qué estamos construyendo. El experimento se convierte en un producto. El producto se convierte en un negocio. 2032NOW proporciona el vehículo para LatAm y los EE.UU.",
-    team_eyebrow:"El equipo",
-    team_open_label:"¿Tú?", team_open_title:"Únete a la comunidad.",
-    cta_eyebrow:"¿Eres el próximo builder?",
-    cta_sub:"Trae tus ideas, tus habilidades, tu energía. Construyamos un futuro propio.",
-    cta_btn:"Únete a 2032NOW"
+    nav_cta:"Solicitar Acceso",
+    hero_sub:"2032NOW PROPORCIONA HERRAMIENTAS DE MOTOR DE NUBE DE ALTO RENDIMIENTO, SINCRONIZACIÓN DESCENTRALIZADA DE DATOS Y COMPLIANCE LATAM-US PARA ESPACIOS DE TRABAJO DISTRIBUIDOS.",
+    hero_btn_ghost:"Arquitectura del sistema →",
+    method_eyebrow:"ARQUITECTURA DEL SISTEMA",
+    m1_title:"ALMACENAMIENTO DISTRIBUIDO",
+    m1_desc:"Soluciones de almacenamiento de datos distribuidos en tiempo real creadas para equipos modernos. Construimos pipelines de archivos en la nube de alta disponibilidad que cruzan fronteras tradicionales.",
+    m2_title:"MOTOR DE COMPLIANCE",
+    m2_desc:"Procesamiento automatizado de marcos legales y corporativos entre entidades de América Latina y sistemas corporativos de EE. UU. Reduciendo la fricción de onboarding de semanas a milisegundos.",
+    m3_title:"CONSOLA CENTRAL DE PRÓXIMA GENERACIÓN",
+    m3_desc:"Despliegue de herramientas robustas de gestión visual de espacios de trabajo basadas en arquitecturas React/Next.js, respaldadas por instancias de procesamiento multirregión complejas.",
+    team_eyebrow:"Ingeniería Central",
+    team_open_label:"Escala con Nosotros", team_open_title:"SOLICITAR CUENTA DE DESARROLLADOR.",
+    cta_eyebrow:"¿LISTO PARA EL DESPLIEGUE EN LA NUBE?",
+    cta_sub:"Envíe el correo electrónico de registro de su organización para iniciar la verificación del entorno de desarrollo y solicitar entornos de sandbox.",
+    cta_btn:"Inicializar Consola"
   }
 };
 
@@ -477,7 +505,6 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
 });
 applyLang();
 
-// Drag configurations for floating boxed titles
 (function() {
   const boxes = document.querySelectorAll('.hbox, .dyn-box');
   boxes.forEach(box => {
